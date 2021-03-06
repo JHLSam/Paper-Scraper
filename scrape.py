@@ -11,7 +11,7 @@ import os
 """
 URL = input("Enter URL(e.g www.abc.com):" + " ")
 urltest = "https://www.google.com"
-DRIVER_PATH = "/Users/lionellim/desktop/webscrape/chromedriver"
+DRIVER_PATH =  os.getcwd() "/chromedriver"
 screencap(DRIVER_PATH,"https://" + URL,"screenshot.png")
 """
 
@@ -27,7 +27,7 @@ class OCR(object):
         """
     
     def url_to_png(self, DRIVER_PATH):
-        local_path = "/Users/lionellim/desktop/webscrape/chromedriver"
+        local_path = os.getcwd() + "/chromedriver"
         self.DRIVER_PATH = local_path
         return screencap(self.DRIVER_PATH, "https://" + self.URL, self.screenshot_name)
 

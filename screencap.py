@@ -13,7 +13,6 @@ class CustomFileError(RuntimeError):
         self.existing_dir = existing_dir
 
 def screencap(DRIVER_PATH,url,screenshot_name):
-    #DRIVER_PATH = "/Users/lionellim/desktop/webscrape/chromedriver"
     driver = webdriver.Chrome(DRIVER_PATH)#(DRIVER_PATH,options = custom) for SSL certificate ignore 
     driver.get(url)
     driver.execute_script('document.body.style.zoom = "50%"')
@@ -31,17 +30,6 @@ def screencap(DRIVER_PATH,url,screenshot_name):
                     print("Folder already exists! Directory not created")
                 screenshot = driver.save_screenshot("Screenshots_storage/" + screenshot_name)
                 return driver.quit()
-
-                """
-            try:
-                os.mkdir(storage_folder)
-            except FileExistsError as e:
-                    print("Folder already exists, directory not created")
-                    
-    screenshot = driver.save_screenshot("Screenshots_storage/" + screenshot_name)
-    return driver.quit()
-                """
-
-
-DRIVER_PATH = "/Users/lionellim/desktop/webscrape/chromedriver"
+            
+DRIVER_PATH = os.getcwd() + "/chromedriver"
 screencap(DRIVER_PATH,"https://www.yahoo.com","screenshots.png")
