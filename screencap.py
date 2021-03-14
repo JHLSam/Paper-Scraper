@@ -31,5 +31,7 @@ def screencap(DRIVER_PATH,url,screenshot_name):
                 screenshot = driver.save_screenshot("Screenshots_storage/" + screenshot_name)
                 return driver.quit()
             
+"""
 DRIVER_PATH = os.getcwd() + "/chromedriver"
 screencap(DRIVER_PATH,"https://www.yahoo.com","screenshots.png")
+"""

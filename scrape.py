@@ -1,46 +1,61 @@
+#!/usr/bin/env python3.6
 import urllib.request
 import io
 from PIL import Image
-import pytesseract as pyt
+import pytesseract
 import wand
 from wand.image import Image as wi
 import cv2
 from screencap import *
 import os
+import pytesseract
+import sys
 
+print(sys.version)
 """
 URL = input("Enter URL(e.g www.abc.com):" + " ")
 urltest = "https://www.google.com"
-DRIVER_PATH =  os.getcwd() "/chromedriver"
+DRIVER_PATH =  os.getcwd() + "/chromedriver"
 screencap(DRIVER_PATH,"https://" + URL,"screenshot.png")
 """
 
 class OCR(object):
+
+    pytesseract.pytesseract.tesseract_cmd = r'/usr/local/Cellar/tesseract/4.1.1/bin/tesseract' 
+
     def __init__(self,URL,screenshot_name):
+        ###e.g a = OCR("www.google.com","screenshots.png")
         #Initialize with URL of webpage and chosen name of webpage screenshot file
         self.URL = URL
         self.screenshot_name = screenshot_name
-    """
-    def input_path(self, path):
-        self.path = input(path)
-        return self.path
-        """
     
-    def url_to_png(self, DRIVER_PATH):
-        local_path = os.getcwd() + "/chromedriver"
-        self.DRIVER_PATH = local_path
-        return screencap(self.DRIVER_PATH, "https://" + self.URL, self.screenshot_name)
+    def url_to_png(self):
+        self.DRIVER = os.getcwd() + "/chromedriver"
+        return screencap(self.DRIVER, "https://" + self.URL, self.screenshot_name)
 
     def locate_screenshot_file(self):
-        if i in os.path().
+        self.dir = os.getcwd() + "/Screenshots_storage/"
+        self.file = self.dir + self.screenshot_name
+        return self.file
 
     def text_recognition(self):
         """
         Apply OCR to image file
         """
-               
+        ocr_text = pytesseract.image_to_string(Image.open(self.locate_screenshot_file()))
+        fp = open("test.txt", "w")
+        fp.write(ocr_text)
+        fp.close
+
+          
     def text_search(self):
         pass
+
+#test
+a = OCR("www.google.com.sg","screenshot.png")
+a.url_to_png()
+a.text_recognition()
+
 
 def getURL():
     stream = urllib.request.urlopen(URL)
