@@ -9,15 +9,16 @@ import cv2
 from screencap import *
 import os
 import pytesseract
+import codecs
 import sys
 
+
 print(sys.version)
-"""
+
 URL = input("Enter URL(e.g www.abc.com):" + " ")
 urltest = "https://www.google.com"
 DRIVER_PATH =  os.getcwd() + "/chromedriver"
 screencap(DRIVER_PATH,"https://" + URL,"screenshot.png")
-"""
 
 class OCR(object):
 
@@ -47,16 +48,28 @@ class OCR(object):
         fp.write(ocr_text)
         fp.close
 
-          
     def text_search(self):
+        fd = codecs.open("test.txt",mode="r",encoding="utf-8")
+        text = fd.readlines().strip()
+        fd.close()
+        arr = []
+        for lines in text:
+            lines.strip()
+            arr.append(lines)
+        print(arr)
+
+    def main():
         pass
 
+    
 #test
-a = OCR("www.google.com.sg","screenshot.png")
-a.url_to_png()
-a.text_recognition()
+test = OCR("www.businessinsider.com","screenshot2.png")
+test.url_to_png()
+test.text_recognition()
 
-
+"""
+TBC - substring search feature
+"""
 def getURL():
     stream = urllib.request.urlopen(URL)
     text = stream.read().decode('utf-8')
