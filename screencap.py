@@ -8,6 +8,7 @@ custom = webdriver.ChromeOptions()
 custom.add_argument('--ignore-ssl-errors=yes')
 custom.add_argument('--ignore-certificate-errors')
 """
+
 class CustomFileError(RuntimeError):
     def __init__(self,existing_dir):
         self.existing_dir = existing_dir

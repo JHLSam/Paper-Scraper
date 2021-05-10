@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.6
 import urllib.request
+import requests
 import io
 from PIL import Image
 import pytesseract
@@ -22,7 +23,7 @@ screencap(DRIVER_PATH,"https://" + URL,"screenshot.png")
 
 class OCR(object):
 
-    pytesseract.pytesseract.tesseract_cmd = r'/usr/local/Cellar/tesseract/4.1.1/bin/tesseract' 
+    #pytesseract.pytesseract.tesseract_cmd = r'/usr/local/Cellar/tesseract/4.1.1/bin/tesseract' 
 
     def __init__(self,URL,screenshot_name):
         ###e.g a = OCR("www.google.com","screenshots.png")
