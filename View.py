@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 #from Controller import *
 #import Controller as Controller
-#import Model as model
 #import numpy as np
 #!/usr/bin/env python3.6
 
@@ -51,7 +50,8 @@ class View(object):
         self.command = command
         self.button = tk.Button(self.master,text=self.text,command=self.command,bg="white",activebackground="blue")
         self.button.pack(side=self.side)
-        
+    
+
 def main():
     root = tk.Tk()
     root.resizable(0,0) #Do not permit resize of window
@@ -61,5 +61,6 @@ def main():
        
 if __name__ == "__main__":
     main()
+    
     
         
