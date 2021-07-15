@@ -1,9 +1,20 @@
 from View import *
-from scrape import *
+import tkinter
+from tkinter import ttk
+#from scrape import *
 
-class Controller(View):
+class Controller(object):
     def __init__(self):
-        super.__init__()
         self.view = View()
-        view.main()
+
+    def clear_box_text(self):
+        return self.view.textbox.delete("1.0","end")
+
+    def main():
+        root = tk.Tk()
+        view = View(root)
+        root.mainloop()
+
+if __name__ == "__main__":
+    Controller.main()
         

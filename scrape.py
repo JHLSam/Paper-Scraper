@@ -1,4 +1,5 @@
 #!/usr/bin/env python3.6
+from Users.lionellim.Desktop.webscrape.screencap import screencap
 import urllib.request
 import requests
 import io
@@ -61,12 +62,6 @@ class OCR(object):
 
     def main():
         pass
-
-    
-#test
-test = OCR("www.businessinsider.com","screenshot2.png")
-test.url_to_png()
-test.text_recognition()
 
 """
 TBC - substring search feature
