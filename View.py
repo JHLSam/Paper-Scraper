@@ -10,7 +10,7 @@ print(tk.TkVersion)
 print(sys.version)
 
 class View(object):
-    controller = Controller()
+    
     def __init__(self,master):
         self.master = master
         #self.controller = Controller()
