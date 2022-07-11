@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.6
-from Users.lionellim.Desktop.webscrape.screencap import screencap
+import screencap
 import urllib.request
 import requests
 import io
